@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BBB-PREDICT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- <script src="/static/js/form.js"></script> -->
+
+</head>
+
+<body id="page-top">
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><b><span class="tity">BBB-PREDICT</span></b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about"><b>About</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services"><b>PREDICT</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact"><b>Authors</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <h1>Machine Learning Approach for prediction of molecule capable of crossing Blood Brain Barrier</h1>
+        </div>
+    </header>
+
+    <section id="about" class="bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-white">
+                    <h2>How this program work:</h2>
+                    <ul>
+                        <li><p>This is a Machine Learning based drug permeablity across blood brain barrier predictor.</p></li>
+                        <li><p>Enter the desried chemical molecule in the SMILES format.</p></li>
+                        <li><p>Choose Appropriate algortihm for your prediction.</p></li>
+                        <li><p>Bam!! you got your result.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="services" class="bg-dark">
+        <div class="container">
+
+            <form id="post-form">
+
+                <div class="form-group">
+                    <label for="smiles"><b>Enter Chemical molecule</b></label>
+                    <input type="text" class="form-control" id="smiles" name="smiles" aria-describedby="smilesHelp" placeholder="Enter SMILES" required>
+                    <small id="smilesHelp" class="form-text text-muted">Enter chemical molecule in SMILES notation.</small>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="algo"><b>Algorithms</b></label>
+                        </div>
+                        <select class="custom-select" name="algo" id="algo" required>
+                        <option selected>Choose...</option>
+                        <option value="RandomForestClassifier">RandomForestClassifier</option>
+                        <option value="LGBMClassifier">LGBMClassifier</option>
+                        <option value="BaggingClassifier">BaggingClassifier</option>
+                        <option value="ExtraTreesClassifier">ExtraTreesClassifier</option>
+                        <option value="LogisticRegression">LogisticRegression</option>
+                        <option value="RidgeClassifierCV">RidgeClassifierCV</option>
+                        <option value="AdaBoostClassifier">AdaBoostClassifier</option>
+                        <option value="LinearSVC">LinearSVC</option>
+                        <option value="XGBClassifier">XGBClassifier</option>
+                        <option value="SVC">SVC</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <button type="submit" class="btn btn-primary" onclick="this.blur();" >Submit</button>
+
+            </form>
+            <div id="loader" align="center" style="display:None; text-align:center;">
+                <img src="../static/css/loader.gif">
+            </div>
+
+            <br><br>
+            <div id="response"></div>
+
+
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Authors</h2>
+                    <br>
+                    <p class="head"><u>Dr. Preeti Karwal(HOD) Biochemistry Department,Deshbandhu College, DU</u></p>
+                    <p class="st">saurav kumar ,Biochemistry Department,Deshbandhu College, DU</p>
+                    <p class="st">shubh sharma ,Biochemistry Department,Deshbandhu College, DU</p>
+                    <p class="st">Muskan Goyal ,Biochemistry Department,Deshbandhu College, DU</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; saurav kumar 2021</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="/static/js/scrolling-nav.js"></script>
+
+    <!-- <script src="/static/js/form_val.js"></script> -->
+
+
+
+
+
+
+<script>
+ 
+
+console.log("loaded")
+var e = document.getElementById("post-form").addEventListener("submit", form_submit);
+    
+function form_submit(e) 
+{
+    e.preventDefault();
+    console.log("default prevent")
+    var smiles = document.getElementById("smiles").value;
+    var algo = document.getElementById("algo").value;
+    console.log("data-collected");
+    data = JSON.stringify({ smiles: smiles, algo: algo });
+    console.log("data-jsonfied");
+    console.log(data);
+    document.getElementById("loader").style.display="inline";
+
+    
+    //xhr
+    var xhr = new XMLHttpRequest();
+    console.log("xmlhttp formed")
+
+    // open
+    xhr.open("POST", `${window.origin}/predict`, true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+
+    console.log("object formed")
+
+    xhr.onload= function()
+    {console.log(this.readyState);
+     console.log(JSON.parse(this.responseText))
+     
+    
+
+        // console.log(this.readyState);
+
+        if (this.status == 200 && this.readyState == 4) 
+        {
+            var res = JSON.parse(this.responseText);
+            document.getElementById("loader").style.display="None";
+
+            if (res["result"] == 1) 
+
+            {
+                document.getElementById("response").innerHTML = `
+                <div id="errorAlert" class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Permeable Molecule!</h4>
+                <p>Prediction is made on the basis of model trained on dataset using different algorithm.</p>
+                <hr>
+              </div>`
+            }
+
+            else if(res["result"] == 0)
+            {
+                document.getElementById("response").innerHTML = `
+
+                <div  id="successAlert" class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Non-Peremable!</h4>
+                <p>Prediction is made on the basis of model trained on dataset using different algorithm.</p>
+                <hr>
+                
+              </div>
+                `
+            }else if(res["result"] == "Predcition Error occured!"){
+
+                document.getElementById("response").innerHTML = `
+
+                <div  id="successAlert" class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Predcition Error occured!!</h4>
+                <p>Either your SMILES notation of molecule is wrong or processing Error occur.</p>
+                <hr>
+                
+              </div>`
+            }else if (res["result"] == `Missing data!`){
+
+                document.getElementById("response").innerHTML = `
+
+                <div  id="successAlert" class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Missing Data !</h4>
+                <p>Please enter the SMILES notation of chemical molecule and choose algorithm.</p>
+                <hr>
+                
+              </div>`
+
+
+            }
+
+        }
+         
+
+    }
+
+    xhr.onprogress = function(){
+        document.getElementById("loader").style.display="inline";
+
+
+    }
+
+    xhr.onerror = function() 
+    {   console.log("error");
+
+        document.getElementById("response").innerHTML = `
+
+            <div  id="successAlert" class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+              </div>
+                
+              `;
+    }
+
+    xhr.send(data);
+
+    
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+<!-- <script>
+
+//         function entry() {
+//             let smiles = document.getElementById("smiles");
+//             let algo = document.getElementById("algo");
+
+//             let data = {
+//                 smile: smiles.value,
+//                 algo: algo.value,
+//             };
+
+//             console.log(data);
+
+//         fetch(`${window.origin}/predict`,{
+//             method: "POST",
+//             creditianls:"include",
+//             body:JSON.stringify(data),
+//             cache: "no-cache",
+//             headers: new Headers({
+//                 "content-type":"application/json"
+//             }).then(function(response){
+
+//                 if (response.status !== 200){
+//                     console.log(`response status is not 200 ${response.status}`);
+//                     return
+//                 }
+//                 else{
+//                     console.log("success")
+//                 }
+//             })
+
+
+//         })
+
+
+
+//         }
+//     </script> -->
+
+</body>
+
+</html>

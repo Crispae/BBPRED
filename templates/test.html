@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>HTML Forms</h2>
+
+    <form action="/predict" method="POST" >
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit"   value="Submit">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+
+
+    <script>
+
+        function entry() {
+            let smiles = document.getElementById("fname");
+            let algo = document.getElementById("fname");
+
+            let data = {
+                smile: smiles.value(),
+                algo: algo.value(),
+            };
+
+            console.log(data);
+
+        fetch(`${window.origin}/predict`,{
+            method: "POST",
+            creditianls:"include",
+            body:JSON.stringify(data),
+            cache: "no-cache",
+            headers: new Headers({
+                "content-type":"application/json"})
+            })
+            // .then(function(response){
+
+        //         if (response.status !== 200){
+        //             console.log(`response status is not 200 ${response.status}`);
+        //             return
+        //         }
+        //         else{
+        //             console.log("success")
+        //         }
+        //     })
+
+
+        // })
+
+
+
+}
+    </script>
+</body>
+
+</html>
