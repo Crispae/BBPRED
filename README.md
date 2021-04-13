@@ -21,13 +21,13 @@ This project aims to develop a solution that can predict, with confidence, the p
 
 ## <u>**Workflow of the Project**</u>
 <br>
-<img title="FLOW OF PROJECT"  src="flow.png">
+<img title="FLOW OF PROJECT"  src="flow.PNG">
 <br>
 <br>
 <br>
 
 ## <u>**TEST RESULT OF BEST MODEL**</u>
-<img title="FLOW OF PROJECT"  src="res.png">
+<img title="FLOW OF PROJECT"  src="res.PNG">
 <br>
 <br>
 
