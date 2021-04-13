@@ -29,6 +29,7 @@ class Predictor:
         except:
             raise ValueError("Problem loading model..")
         return predictor_
+
         
     def smiles(self,data):
         """"
@@ -43,6 +44,8 @@ class Predictor:
             raise ValueError("smiles conversion Error")
 
     def molecular_prop(self):
+        mol_prop = self._all_mol_prop["Weight","TPSA","logP",""]
+
 
 
 
